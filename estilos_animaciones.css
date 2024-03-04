@@ -1,0 +1,52 @@
+.container{
+	width: 100%;
+	height: 100vh;
+	border: solid 2px #000;
+	background:linear-gradient(75deg, #FF0040, transparent);
+	margin: 20px;
+	display: flex; /*si o si tiene que estar el display flex para poder alinear verticalmente con el align item*/
+	align-items: center;
+
+
+}
+
+.caja{
+	width: 100px;
+	height: 100px;
+	padding: 10px;
+	margin: 10px;
+	border: solid 2px #000;
+	background-color: #474747;
+	position: relative;
+	animation-name: animacion_caja;/*estas propiedad me permite llamar a la animación*/
+	animation-duration: 5s;
+	animation-timing-function: linear; /*al igual que en las transformaciones puedo establecer 
+	como se va a mover el objeto durante la animación*/
+	animation-delay: 1s; /*establece cuanto demorará la animación en arrancar*/
+	animation-direction: alternate; /*establece que la animación vaya en el sentido en el que esta
+	escrita, si pongo reverse va a empezar de atras para adelante, si pongo alternate va a ir y a volver, pero 
+	solo funciona, cuando animation-iteration-count esta en un valor mayor a 1*/
+	animation-fill-mode: none; /*se queda igual que antes de q arranque la animación*/
+	/*both arranca con la primera posición de la animación, mientras que con forward, arranca de nuevo
+	tal como quedo al finalizar la anterior*/ 
+	animation-iteration-count: 2;
+
+}
+@keyframes animacion_caja{
+	0%{
+		position: relative;
+		left: 0%;
+		border-radius: 30%
+	}
+	50%{
+		left: 50%;
+		border-radius: 50%;
+		background-color: #949494;
+
+	}
+	100% {
+		left: 85%;
+		border-radius: 100%;
+		background-color: #fff;
+	}
+}
